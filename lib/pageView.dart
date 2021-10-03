@@ -10,9 +10,18 @@ class FirstStatfull extends StatefulWidget {
 class _FirstStatfullState extends State<FirstStatfull> {
   late PageController pc;
 
+  List listImag = [
+    {"url": "./images/1.jpg"},
+    {"url": "./images/2.jpg"},
+    {"url": "./images/3.jpg"},
+    {"url": "./images/4.jpg"},
+    {"url": "./images/5.jpg"},
+  ];
   @override
   void initState() {
-    pc = new PageController(initialPage: 2, viewportFraction: 0.75);
+    pc = new PageController(
+      initialPage: 0,
+    );
     super.initState();
   }
 
@@ -26,7 +35,7 @@ class _FirstStatfullState extends State<FirstStatfull> {
       body: Column(
         children: [
           Container(
-            height: 300,
+            height: 200,
             child: PageView(
               // scrollDirection: Axis.vertical,
               physics: BouncingScrollPhysics(),
@@ -42,6 +51,21 @@ class _FirstStatfullState extends State<FirstStatfull> {
               controller: pc,
               onPageChanged: (index) {
                 print(index);
+              },
+            ),
+          ),
+          MaterialButton(
+              child: Text("Go to page 3"),
+              onPressed: () {
+                pc.animateToPage(2,
+                    duration: Duration(seconds: 1), curve: Curves.easeIn);
+              }),
+          Container(
+            height: 200,
+            child: PageView.builder(
+              itemCount: listImag.length,
+              itemBuilder: (context, index) {
+                return Image.asset(listImag[index]["url"]);
               },
             ),
           )
