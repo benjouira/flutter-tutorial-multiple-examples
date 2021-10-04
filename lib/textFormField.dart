@@ -34,7 +34,7 @@ class _FirstStatfullState extends State<FirstStatfull> {
         title: Text("Home Page"),
         centerTitle: true,
       ),
-      body: Column(
+      body: ListView(
         children: [
           Container(
             margin: EdgeInsets.all(10),
@@ -98,7 +98,48 @@ class _FirstStatfullState extends State<FirstStatfull> {
                     icon: Icon(Icons.alarm),
                     prefixIcon: Icon(Icons.alarm),
                     suffixIcon: Icon(Icons.alarm)),
-              ))
+              )),
+          Container(
+              margin: EdgeInsets.all(10),
+              child: TextFormField(
+                cursorColor: Colors.yellow,
+                initialValue: "+216",
+                keyboardType: TextInputType.number,
+                maxLength: 12,
+              )),
+          Container(
+              margin: EdgeInsets.all(10),
+              child: TextFormField(
+                decoration: InputDecoration(border: OutlineInputBorder()),
+                minLines: 1,
+                maxLines: 3,
+              )),
+          Container(
+              margin: EdgeInsets.all(10),
+              child: TextFormField(
+                decoration: InputDecoration(border: OutlineInputBorder()),
+                obscureText: true,
+              )),
+          Container(
+              margin: EdgeInsets.all(10),
+              child: TextFormField(
+                decoration: InputDecoration(border: OutlineInputBorder()),
+                readOnly: true,
+                initialValue: "read only text field",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              )),
+          Container(
+              margin: EdgeInsets.all(10),
+              child: TextFormField(
+                decoration: InputDecoration(border: OutlineInputBorder()),
+                // tet7akam fl icon elli fl clavier elli melouta 3allimin !
+                // elli fiha mte3 el go wela mte3 recherch wela enter
+                // ma tadhhar ken fl tlfoun
+                textInputAction: TextInputAction.search,
+              )),
         ],
       ),
     );
