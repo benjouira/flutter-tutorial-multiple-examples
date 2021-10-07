@@ -1,5 +1,7 @@
+import 'package:awesome_app/navigator/three.dart';
+import 'package:awesome_app/navigator/two.dart';
 import 'package:flutter/material.dart';
-import 'package:awesome_app/pageView.dart';
+import 'package:awesome_app/navigator/navigator.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,6 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: FirstStatfull(),
+      routes: {
+        "two": (context) => Two(),
+        "three": (context) => Three(),
+        "home": (context) => FirstStatfull()
+      },
     );
   }
 }
