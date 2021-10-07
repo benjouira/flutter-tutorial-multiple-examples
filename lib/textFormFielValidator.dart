@@ -29,13 +29,17 @@ class _FirstStatfullState extends State<FirstStatfull> {
         centerTitle: true,
       ),
       body: Form(
+        //yet7a9a9 bchakl èènii mn el akhtaa2
+        autovalidateMode: AutovalidateMode.always,
         key: frmStatkey,
         child: Column(
           children: [
             TextFormField(
               validator: (text) {
-                if (text!.length < 3) {
-                  return "verif the number of letter";
+                if (text!.length < 6) {
+                  return "number of letter must be bigger than 6 character";
+                } else if (text.length > 12) {
+                  return "number of letter must be lower than 12 character";
                 }
                 return null;
               },
