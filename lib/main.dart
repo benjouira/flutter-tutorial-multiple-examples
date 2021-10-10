@@ -2,7 +2,7 @@ import 'package:awesome_app/navigator/three.dart';
 import 'package:awesome_app/navigator/two.dart';
 import 'package:flutter/material.dart';
 // import 'package:awesome_app/navigator/navigator.dart';
-import 'package:awesome_app/slider.dart';
+import 'package:awesome_app/searchDelegate.dart';
 
 void main() {
   runApp(MyApp());
