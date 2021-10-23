@@ -1,5 +1,5 @@
 import 'dart:html';
-
+import 'package:geocoding/geocoding.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -50,6 +50,10 @@ class _GeolocatorClassState extends State<GeolocatorClass> {
             cl = await getLatAndLong();
             print(" latitude ${cl.latitude}");
             print(" longitude ${cl.longitude}");
+            // ************ geoCoding *******
+            List<Placemark> placemarks =
+                await placemarkFromCoordinates(52.2165157, 6.9437819);
+            print(placemarks[0].toString());
           },
           btnCancelOnPress: () {},
         ).show();
